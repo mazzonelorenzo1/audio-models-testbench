@@ -20,11 +20,10 @@ You can explore the different components of the project through the links below:
 
 ---
 
-## 🛠️ Tech Stack
-* **STT**: Moonshine (Tiny)
-* **LLM**: Qwen 2.5 Instruct (Optimized for NPU via ONNX)
-* **TTS**: Piper TTS / Kokoro TTS
-* **Quantization**: ONNX Runtime / Liquid ONNX / GGUF
+## 🛠️ Tech Stack for the Demo
+* **STT**: Moonshine Tiny (27M Parameters) 
+* **LLM**: Qwen 2.5 Instruct (Optimized for Intel NPU via ONNX, 1.5B Parameters)
+* **TTS**: Piper TTS (20M Parameters)
 
 ---
 
