@@ -15,8 +15,8 @@ This repository hosts a fully offline, end-to-end vocal assistant optimized for 
 You can explore the different components of the project through the links below:
 
 * [**main/**](./main) - **Core Logic**: Contains the main pipeline, the interactive demo, and the Semantic Bridge Agent.
-* [**benchmarks/**](./benchmarks) - **Evaluation Suite**: Scripts for measuring performance, power draw, and hardware stress tests.
-* [**tools/**](./tools) - **Utilities**: Auxiliary scripts for model management and Hugging Face interactions.
+* [**benchmarks/**](./Benchmarks) - **Evaluation Suite**: Scripts for measuring performance, power draw, and hardware stress tests.
+* [**tools/**](./Tools) - **Utilities**: Auxiliary scripts for model management and Hugging Face interactions.
 
 ---
 
