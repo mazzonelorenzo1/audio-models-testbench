@@ -38,8 +38,8 @@ Clone the repository and install the required packages:
 ```bash
 git clone [https://github.com/mazzonelorenzo1/audio-models-testbench-and-vocal-assistant.git](https://github.com/mazzonelorenzo1/audio-models-testbench-and-vocal-assistant.git)
 cd your-repo-name
-pip install -r requirements.txt
-python -m spacy download en_core_web_sm
+pip install -r requirements-demo.txt
+pip install -r requirements-modular_pipeline.txt
 ```
 
 ### 3. Running the Assistant
