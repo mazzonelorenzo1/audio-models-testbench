@@ -1,6 +1,6 @@
 # Edge AI Vocal Assistant & Performance Testbench
 
-This repository hosts a fully offline, end-to-end vocal assistant optimized for Edge devices (in particular the Khadas Mind 2 AI Maker Kit). The project focuses on modularity and performance optimization, featuring a custom NLP-based **Semantic Bridge Agent** to minimize perceived latency in real-time conversations.
+This repository hosts a fully offline, end-to-end vocal assistant optimized for Edge devices (in particular the Khadas Mind 2 AI Maker Kit). The project focuses on modularity and performance optimization, featuring a custom chunking algorithm to minimize perceived latency in real-time conversations.
 
 ## 🚀 Key Features
 * **Fully Offline**: STT, LLM, and TTS engines run locally without external API dependencies.
