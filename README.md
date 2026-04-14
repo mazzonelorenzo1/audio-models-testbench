@@ -36,7 +36,7 @@ Ensure you have Python 3.10+ installed. It is highly recommended to use a virtua
 ### 2. Installation
 Clone the repository and install the required packages:
 ```bash
-git clone [https://github.com/YourUsername/your-repo-name.git](https://github.com/YourUsername/your-repo-name.git)
+git clone [https://github.com/mazzonelorenzo1/audio-models-testbench-and-vocal-assistant.git](https://github.com/mazzonelorenzo1/audio-models-testbench-and-vocal-assistant.git)
 cd your-repo-name
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
