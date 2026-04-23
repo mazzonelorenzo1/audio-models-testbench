@@ -5,6 +5,16 @@
 ![OpenVINO](https://img.shields.io/badge/Intel-OpenVINO-blueviolet)
 ![ONNX](https://img.shields.io/badge/ONNX-Runtime-005ced)
 
+## 📑 Table of Contents
+- [Abstract](#abstract)
+- [Operational Modes & Test Methodology](#operational-modes)
+- [Supported Models Library](#supported-models)
+- [Tools & Utility Scripts](#tools-and-utilities)
+- [Hardware Profiling Benchmarks](#hardware-benchmarks)
+- [Getting Started](#getting-started)
+
+---
+
 <a id="abstract"></a>
 ## 📖 Abstract
 This repository provides a highly modular, end-to-end benchmarking framework designed to evaluate and compare locally hosted AI models for Conversational Voice Assistants. 
@@ -73,6 +83,31 @@ The framework currently supports a vast array of cutting-edge models, carefully 
 
 ---
 
+<a id="tools-and-utilities"></a>
+## 🛠️ Tools & Utility Scripts
+
+This directory contains accessory scripts and utility tools designed to support development, testing, and environment setup.
+
+**Provided Tools:**
+* `Single_Model_Metrics.py`: An automated script that checks whether a specific model is eligible for testing on the Modular Pipeline.
+* `HF_Model_Scraper.py`: An automated script for interacting with the Hugging Face Hub. It is used to analyze, filter, or download the specific model weights and configuration files required by the local assistant.
+
+---
+
+<a id="hardware-benchmarks"></a>
+## 📊 Audio Models Testbench (Hardware Profiling)
+
+This directory contains the scripts used for benchmarking and analyzing the performance of AI models running on Edge hardware (e.g., Khadas Mind). 
+*Note: These scripts are not part of the production vocal assistant pipeline. They are specifically designed for data collection, research, and thesis development.*
+
+**Files and Tracked Metrics:**
+* `Energy_Consumption.py`: Tracks energy consumption in Watts during model inference.
+* `Hardware_Consumption.py`: Analyzes the load and utilization of the CPU/NPU.
+* `RAM_Usage.py`: Monitors allocated memory peaks to identify hardware bottlenecks.
+* `Power_Metrics.py`: Aggregates and logs power draw data.
+
+---
+
 <a id="getting-started"></a>
 ## 🚀 Getting Started
 
@@ -89,10 +124,16 @@ source venv/bin/activate # On macOS/Linux
 ```bash
 pip install -r requirements.txt
 ```
-*(Note: Some specific engines like `llama_cpp` or `openvino` might require C++ build tools or specific hardware drivers depending on your OS. Make sure you download the required models and place them in the paths specified inside `DefMain.py`).*
+*(Note: Some specific engines like `llama_cpp` or `openvino` might require C++ build tools or specific hardware drivers depending on your OS).*
 
-### 3. Running the Testbench
-To launch the evaluation framework:
+### 3. Download Local AI Models
+To run the framework completely offline, you need to download the pre-compiled weights and configuration files for the models.
+
+* Download all the required models from this [Google Drive Link](INSERISCI_QUI_IL_TUO_LINK).
+* Extract the folders and place them in the correct root or `Models` directory as expected by the paths inside `DefMain.py`.
+
+### 4. Running the Testbench
+To launch the core evaluation framework:
 ```bash
 python DefMain.py
 ```
