@@ -1,69 +1,84 @@
-# Edge AI Vocal Assistant & Performance Testbench
+# 🧪 Edge AI Audio Models Testbench & Evaluation Framework
 
-This repository hosts a fully offline, end-to-end vocal assistant optimized for Edge devices (specifically the Khadas Mind 2 AI Maker Kit). The project focuses on modularity and performance optimization, featuring a custom chunking algorithm to minimize perceived latency in real-time conversations.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-Framework-ee4c2c)
+![OpenVINO](https://img.shields.io/badge/Intel-OpenVINO-blueviolet)
+![ONNX](https://img.shields.io/badge/ONNX-Runtime-005ced)
 
-## 🚀 Key Features
-* **Fully Offline**: STT, LLM, and TTS engines run locally without external API dependencies.
-* **Modular Architecture**: Easily swap models (e.g., Moonshine vs. Whisper, Qwen vs. Llama).
-* **Fully Functional**: A custom conversational demo with the three best performing models (Moonshine Tiny, Qwen 2.5 Instruct, Piper TTS).
-* **Comprehensive Benchmarking**: Integrated tools to measure latency (RTF), accuracy (WER), hardware utilization (RAM/CPU/NPU), and power consumption.
+<a id="abstract"></a>
+## 📖 Abstract
+This repository provides a highly modular, end-to-end benchmarking framework designed to evaluate and compare locally hosted AI models for Conversational Voice Assistants. 
 
----
-
-## 📂 Repository Structure
-
-You can explore the different components of the project through the links below:
-
-* [**main/**](./main) - **Core Logic**: Contains the main pipeline, the interactive demo, and the Semantic Bridge Agent.
-* [**benchmarks/**](./Benchmarks) - **Evaluation Suite**: Scripts for measuring performance, power draw, and hardware stress tests.
-* [**tools/**](./Tools) - **Utilities**: Auxiliary scripts for model management and Hugging Face interactions.
+It allows developers to plug-and-play different **Speech-to-Text (STT)**, **Large Language Models (LLM)**, and **Text-to-Speech (TTS)** engines, rigorously profiling their performance on Edge hardware (e.g., Mini PCs, SBCs) without relying on cloud APIs.
 
 ---
 
-## 🛠️ Tech Stack for the Demo
-* **STT**: Moonshine Tiny (27M Parameters) 
-* **LLM**: Qwen 2.5 Instruct (Optimized for Intel NPU via ONNX, 1.5B Parameters)
-* **TTS**: Piper TTS (20M Parameters)
+<a id="features"></a>
+## ✨ Key Features & Profiling Metrics
+The framework doesn't just run the models; it profiles the hardware and software efficiency in real-time. During execution, it automatically tracks and generates charts for:
+- **Real-Time Factor (RTF):** To ensure audio generation/transcription is faster than the audio duration itself (RTF < 1.0).
+- **Time-To-First-Token (TTFT):** LLM responsiveness measurement.
+- **Word Error Rate (WER):** Accuracy tracking for STT models using the `jiwer` library.
+- **Hardware Impact:** Real-time monitoring of Peak RAM usage (%) and CPU utilization (%) during inference.
 
 ---
 
-## 🏁 Quick Start
+<a id="supported-models"></a>
+## 🧩 Supported Models
+The architecture is strictly modular. The core `DefMain.py` script currently integrates and supports the following local models:
 
-### 1. Prerequisites
-Ensure you have Python 3.10+ installed. It is highly recommended to use a virtual environment.
+### 🎤 Speech-to-Text (STT)
+- Whisper (via `pywhispercpp`)
+- HuggingFace Seq2Seq Speech Models (via `optimum.intel` / OpenVINO)
 
-### 2. Installation
-Clone the repository and install the required packages:
+### 🧠 Large Language Models (LLM)
+- LLaMA variants (via `llama_cpp`)
+- Qwen / Llama-3 (via `openvino_genai`)
+- AutoModelForCausalLM (Standard HuggingFace)
+
+### 🔊 Text-to-Speech (TTS)
+- Piper TTS
+- Kokoro (Both ONNX and PyTorch implementations)
+- Moshi / Mimi
+- KittenTTS & Supertonic
+- Soprano TTS
+- Pocket TTS
+
+---
+
+<a id="getting-started"></a>
+## 🚀 Getting Started
+
+### 1. Environment Setup
+Due to the vast amount of supported inference engines, it is highly recommended to use a dedicated virtual environment.
+
 ```bash
-git clone [https://github.com/mazzonelorenzo1/audio-models-testbench-and-vocal-assistant.git](https://github.com/mazzonelorenzo1/audio-models-testbench-and-vocal-assistant.git)
-cd your-repo-name
-pip install -r requirements-demo.txt
-pip install -r requirements-modular_pipeline.txt
+python -m venv venv
+venv\Scripts\activate   # On Windows
+source venv/bin/activate # On macOS/Linux
 ```
 
-### 3. Running the Assistant
-To start the interactive voice conversation:
+### 2. Install Dependencies
 ```bash
-python src/demo.py
+pip install -r requirements.txt
 ```
+*(Note: Some specific engines like `llama_cpp` or `openvino` might require C++ build tools or specific hardware drivers depending on your OS).*
 
-### 4. Running Benchmarks
-To evaluate various model performances:
+### 3. Running the Testbench
+To launch the evaluation framework and generate the performance reports:
 ```bash
-python src/Modular_Pipeline.py
+python DefMain.py
 ```
-
-## 📊 Evaluation Metrics
-The project evaluates the pipeline using the following scientific metrics:
-* **WER (Word Error Rate)**: For Speech-to-Text accuracy.
-* **TTFT (Time To First Token)**: LLM response speed.
-* **TTFA (Time To First Audio)**: Overall latency from user input to speech output.
-* **RTF (Real-Time Factor)**: TTS efficiency.
-* **Tk/s (Tokens per Second)**: LLM generation throughput.
-* **Semantic Similarity**: To evaluate the accuracy and consistency of the LLM responses.
-* **Power Efficiency**: Energy consumption (Watts) and hardware load (CPU/NPU/RAM) per inference cycle.
+Upon completion, the script will output a comprehensive `matplotlib` dashboard displaying system resource impact, RTF curves, and WER scores across the different runs.
 
 ---
 
-## 📝 License
-This project is developed for academic and research purposes as part of a Master's Thesis for Milano-Bicocca University and ST Microelectronics.
+<a id="repository-structure"></a>
+## 📁 Repository Structure
+```text
+edge-audio-testbench/
+├── DefMain.py                # The core benchmarking orchestrator
+├── requirements.txt          # Full list of dependencies
+├── assets/                   # Evaluation charts and diagrams
+└── [Other Utility Scripts]   # Helper scripts for dataset acquisition
+```
