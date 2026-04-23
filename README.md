@@ -13,36 +13,63 @@ It allows developers to plug-and-play different **Speech-to-Text (STT)**, **Larg
 
 ---
 
-<a id="features"></a>
-## ✨ Key Features & Profiling Metrics
-The framework doesn't just run the models; it profiles the hardware and software efficiency in real-time. During execution, it automatically tracks and generates charts for:
-- **Real-Time Factor (RTF):** To ensure audio generation/transcription is faster than the audio duration itself (RTF < 1.0).
-- **Time-To-First-Token (TTFT):** LLM responsiveness measurement.
-- **Word Error Rate (WER):** Accuracy tracking for STT models using the `jiwer` library.
-- **Hardware Impact:** Real-time monitoring of Peak RAM usage (%) and CPU utilization (%) during inference.
+<a id="operational-modes"></a>
+## ⚙️ Operational Modes & Test Methodology
+
+The core orchestrator (`DefMain.py`) is structured into **5 distinct operational modes**, allowing both interactive usage and automated batch benchmarking. 
+
+Whenever an OpenVINO or hardware-agnostic model is selected, **the framework dynamically prompts the user to select the target inference device (CPU, GPU, or NPU)**, enabling precise hardware-level profiling.
+
+### [1] Full Pipeline (STT -> LLM -> TTS)
+An interactive, real-time mode. It captures microphone input, transcribes it, generates an LLM response, and synthesizes the audio output, measuring the total Time-To-First-Audio (TTFA) and pipeline latency.
+
+### [2] STT WER Evaluation
+* **Dataset:** LibriSpeech Streaming Dataset.
+* **Methodology:** The framework downloads standardized audio samples, passes them through the selected STT engine, and compares the transcription against the ground truth using the `jiwer` library to calculate the **Word Error Rate (WER)**.
+
+### [3] Liquid ONNX Engine Benchmark
+A dedicated benchmarking suite designed to profile the execution speed and system impact of continuous/liquid state-space models optimized in ONNX format.
+
+### [4] TTS RTF Evaluation
+* **Dataset:** LibriSpeech Streaming Dataset (Text subset).
+* **Methodology:** Feeds standardized textual sentences to the selected TTS engine. It calculates the **Real-Time Factor (RTF)** by dividing the time taken to generate the audio by the actual duration of the generated audio (RTF < 1.0 means the model generates audio faster than real-time playback).
+
+### [5] LLM Tk/s & Semantic Similarity Evaluation
+* **Dataset:** SQuAD (Stanford Question Answering Dataset).
+* **Methodology:** Feeds context paragraphs and questions to the LLM. It measures generation speed in **Tokens per Second (Tk/s)** and uses NLP metrics to evaluate the semantic similarity between the LLM's generated answer and the expected ground truth.
 
 ---
 
 <a id="supported-models"></a>
-## 🧩 Supported Models
-The architecture is strictly modular. The core `DefMain.py` script currently integrates and supports the following local models:
+## 🧩 Supported Models Library
 
-### 🎤 Speech-to-Text (STT)
-- Whisper (via `pywhispercpp`)
-- HuggingFace Seq2Seq Speech Models (via `optimum.intel` / OpenVINO)
+The framework currently supports a vast array of cutting-edge models, carefully integrated to run completely offline. 
 
-### 🧠 Large Language Models (LLM)
-- LLaMA variants (via `llama_cpp`)
-- Qwen / Llama-3 (via `openvino_genai`)
-- AutoModelForCausalLM (Standard HuggingFace)
+### 🎤 Speech-to-Text (STT) Engines
+* **Whisper Family (OpenVINO):** Tiny OV, Base OV, Small OV, Medium OV, V3 Turbo OV `[CPU, GPU]`
+* **Distil-Whisper (OpenVINO):** Small, Large v3.5 `[CPU, GPU]`
+* **Moonshine:** Tiny (27M), Base (61M) `[CPU]`
+* **Fun-ASR-Nano:** Native `[CPU]` and OpenVINO Optimized `[CPU, GPU]`
+* **Qwen3-ASR 0.6B:** OpenVINO Optimized `[CPU, GPU]`
+* **Kyutai STT:** Native `[CPU]`
 
-### 🔊 Text-to-Speech (TTS)
-- Piper TTS
-- Kokoro (Both ONNX and PyTorch implementations)
-- Moshi / Mimi
-- KittenTTS & Supertonic
-- Soprano TTS
-- Pocket TTS
+### 🧠 Large Language Models (LLMs)
+* **Qwen 2.5 1.5B Instruct:** OpenVINO int4 `[CPU, GPU, NPU]`
+* **DeepSeek R1 1.5B Distill:** OpenVINO int4 `[CPU, GPU, NPU]`
+* **Qwen OV:** Standard OpenVINO `[CPU, GPU, NPU]`
+* **SmolLM2 360M:** Native `[CPU]`
+* **Gemma 3 270M:** Native `[CPU]`
+
+### 🔊 Text-to-Speech (TTS) Engines
+* **Kokoro:** OpenVINO (`af_heart`) `[CPU, GPU, NPU]` and Native `[CPU]`
+* **Piper:** ONNX Runtime `[CPU]`
+* **KittenTTS:** Nano and Mini 0.8 (ONNX) `[CPU]`
+* **Soprano 1.1 80M:** Native `[CPU]`
+* **Pocket-TTS (Kyutai):** Native `[CPU]`
+* **Supertonic-2:** ONNX Runtime `[CPU]`
+* **OuteTTS 0.1:** 350M LLaMa-based `[CPU]`
+* **Qwen3-TTS 0.6B:** OpenVINO Optimized `[CPU, GPU]`
+* **VoxCPM 0.5B:** Diffusion-based `[CPU]`
 
 ---
 
@@ -62,23 +89,11 @@ source venv/bin/activate # On macOS/Linux
 ```bash
 pip install -r requirements.txt
 ```
-*(Note: Some specific engines like `llama_cpp` or `openvino` might require C++ build tools or specific hardware drivers depending on your OS).*
+*(Note: Some specific engines like `llama_cpp` or `openvino` might require C++ build tools or specific hardware drivers depending on your OS. Make sure you download the required models and place them in the paths specified inside `DefMain.py`).*
 
 ### 3. Running the Testbench
-To launch the evaluation framework and generate the performance reports:
+To launch the evaluation framework:
 ```bash
 python DefMain.py
 ```
-Upon completion, the script will output a comprehensive `matplotlib` dashboard displaying system resource impact, RTF curves, and WER scores across the different runs.
-
----
-
-<a id="repository-structure"></a>
-## 📁 Repository Structure
-```text
-edge-audio-testbench/
-├── DefMain.py                # The core benchmarking orchestrator
-├── requirements.txt          # Full list of dependencies
-├── assets/                   # Evaluation charts and diagrams
-└── [Other Utility Scripts]   # Helper scripts for dataset acquisition
-```
+Follow the interactive CLI to select your desired mode, choose the models from the library, target your hardware (CPU/GPU/NPU), and let the framework generate the performance dashboard!
