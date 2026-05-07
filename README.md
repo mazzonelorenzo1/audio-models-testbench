@@ -241,6 +241,12 @@ To evaluate the viability of these models for Edge devices, it is essential to c
 | VoxCPM | CPU | 15.90 | 0.00 | 20.07 | 44.80 | **113.80** |
 | OuteTTS 0.1 | CPU | 26.85 | 0.00 | 32.48 | 47.20 | **1229.43** |
 
+### 💡 Energy & System Bottlenecks: Final Takeaways
+
+* **Speed Equals Efficiency:** Ultra-lightweight models (e.g., Moonshine, Piper) minimize energy use (~1 Joule/s) primarily because their low RTF allows the SoC to instantly return to its ~4W idle state.
+* **The iGPU Advantage:** Hardware offloading via OpenVINO is mandatory for heavier models. Running Whisper Large on the iGPU drops energy consumption exponentially (e.g., from 52J to 3J) by drastically cutting inference time.
+* **The Edge Trade-off (CPU vs. RAM):** While C++ optimized models run efficiently on the CPU, they often lock it at 100% utilization, risking OS starvation. Offloading to the iGPU solves this but shifts the bottleneck to the Unified Memory Architecture (UMA), pushing RAM usage up to 70% for a full conversational pipeline.
+
 <a id="getting-started"></a>
 ## 🚀 Getting Started
 
