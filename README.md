@@ -187,6 +187,60 @@ The benchmark results reveal crucial insights into how different architectures a
 * **Smart Mid-Weight Architectures:** Pocket TTS (100M) outperformed smaller discrete models by operating in a continuous latent space at a low generation frequency. Similarly, Supertonic 2 makes diffusion models viable on the edge strictly through aggressive trajectory distillation (fewer inference steps).
 * **The ALM CPU Bottleneck:** Audio Language Models (ALMs) like OuteTTS or VoxCPM are currently incompatible with CPU-only real-time constraints. Their autoregressive nature requires high-frequency sequential forward passes that immediately saturate CPU memory bandwidth, mandating dedicated hardware acceleration to be usable.
 
+### ⚡ Energy Efficiency and Hardware Telemetry
+
+To evaluate the viability of these models for Edge devices, it is essential to consider their energy footprint and memory utilization. Power consumption is inherently tied to the Real-Time Factor (RTF): models that execute inference rapidly minimize the time the System-on-Chip (SoC) spends in a high-power active state. These metrics where acquired via the HWiNFO application.
+
+*Baseline System Idle state: 4.08 W Total System Power, 29.7% RAM.*
+
+<br>
+
+#### 🔋 STT Power Consumption & Energy Footprint
+*Energy / s Audio is calculated as Average System Power × RTF. Lower is better.*
+
+| Model | Device | CPU Pwr (W) | iGPU Pwr (W) | System Pwr (W) | Peak RAM (%) | Energy / s Audio (Joules) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Moonshine Tiny | CPU | 17.24 | - | 22.26 | 32.70 | **0.80** |
+| Moonshine Base | CPU | 17.00 | - | 21.81 | 32.90 | **1.40** |
+| Whisper Tiny | GPU | 18.11 | 1.92 | 23.43 | 40.10 | **1.41** |
+| Distil-Whisper Small | GPU | 19.76 | 3.49 | 25.76 | 36.20 | **1.83** |
+| Whisper Base | GPU | 19.65 | 2.48 | 25.67 | 41.60 | **1.93** |
+| Whisper Tiny | CPU | 24.31 | - | 29.67 | 35.30 | **2.58** |
+| Whisper Small | GPU | 21.56 | 4.53 | 27.69 | 45.70 | **2.77** |
+| Distil-Whisper Large-V3 | GPU | 23.46 | 5.57 | 30.07 | 47.10 | **2.95** |
+| Whisper Large-V3 Turbo | GPU | 22.53 | 6.39 | 29.42 | 51.80 | **3.24** |
+| Qwen3-ASR | GPU | 26.53 | 6.54 | 33.40 | 47.00 | **4.24** |
+| FunASR Nano | GPU | 21.29 | 3.84 | 27.01 | 48.00 | **4.38** |
+| Whisper Base | CPU | 27.24 | - | 32.58 | 42.70 | **4.66** |
+| FunASR Nano | CPU | 30.14 | - | 36.21 | 49.90 | **5.21** |
+| Whisper Medium | GPU | 25.88 | 6.22 | 33.02 | 58.40 | **5.51** |
+| Qwen3-ASR | CPU | 30.07 | 0.01 | 36.19 | 50.10 | **7.24** |
+| Distil-Whisper Small | CPU | 30.33 | - | 35.68 | 37.10 | **10.35** |
+| Whisper Small | CPU | 30.68 | - | 37.48 | 46.50 | **15.18** |
+| Distil-Whisper Large-V3 | CPU | 30.11 | - | 37.51 | 49.90 | **46.51** |
+| Whisper Medium | CPU | 30.97 | - | 38.68 | 57.20 | **49.55** |
+| Whisper Large-V3 Turbo | CPU | 31.18 | - | 38.01 | 54.50 | **52.68** |
+
+<br>
+
+#### 🔋 TTS Power Consumption & Energy Footprint
+*Energy / s Audio is calculated as Average System Power × RTF. Lower is better.*
+
+| Model | Device | CPU Pwr (W) | iGPU Pwr (W) | System Pwr (W) | Peak RAM (%) | Energy / s Audio (Joules) |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| Piper TTS | CPU | 30.00 | 0.01 | 36.35 | 38.40 | **1.24** |
+| Kitten TTS Nano | CPU | 20.67 | 0.00 | 25.08 | 36.30 | **4.24** |
+| Supertonic 2 | CPU | 16.67 | 0.00 | 20.67 | 36.40 | **5.89** |
+| Pocket TTS | CPU | 23.60 | 0.01 | 28.18 | 37.00 | **6.06** |
+| Soprano 1.1 | CPU | 16.73 | 0.00 | 20.94 | 38.50 | **8.69** |
+| Kokoro TTS | CPU | 30.95 | 0.01 | 36.51 | 49.00 | **9.31** |
+| Kitten TTS Mini | CPU | 21.11 | 0.00 | 25.81 | 38.20 | **9.34** |
+| Kokoro TTS | GPU | 26.07 | 5.64 | 32.78 | 49.00 | **43.60** |
+| Qwen3 TTS | GPU | 24.96 | 3.42 | 30.60 | 50.00 | **59.15** |
+| Qwen3 TTS | CPU | 26.65 | 0.00 | 29.03 | 50.20 | **64.50** |
+| VoxCPM | CPU | 15.90 | 0.00 | 20.07 | 44.80 | **113.80** |
+| OuteTTS 0.1 | CPU | 26.85 | 0.00 | 32.48 | 47.20 | **1229.43** |
+
 <a id="getting-started"></a>
 ## 🚀 Getting Started
 
