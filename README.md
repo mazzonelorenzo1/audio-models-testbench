@@ -129,7 +129,7 @@ pip install -r requirements.txt
 ### 3. Download Local AI Models
 To run the framework completely offline, you need to download the pre-compiled weights and configuration files for the models.
 
-* Download all the required models from this [Google Drive Link](INSERISCI_QUI_IL_TUO_LINK).
+* Download all the required models from this [Google Drive Link]([https://drive.google.com/drive/folders/1xDNm1kooOtHcSOL2VqS6_wEpoEkd5Paz?usp=drive_link]).
 * Extract the folders and place them in the correct root or `Models` directory as expected by the paths inside `DefMain.py`.
 
 ### 4. Running the Testbench
