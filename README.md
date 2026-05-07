@@ -98,7 +98,7 @@ This directory contains accessory scripts and utility tools designed to support 
 <a id="hardware-benchmarks"></a>
 ## 📊 Audio Models Testbench (Hardware Profiling)
 
-This directory contains the scripts used for benchmarking and analyzing the performance of AI models running on Edge hardware (e.g., Khadas Mind). 
+This directory contains the scripts used for benchmarking and analyzing the performance of AI models running on the [Khadas Mind 2 AI Maker Kit](https://www.khadas.com/product-page/mind-maker-kit-lnl). 
 *Note: These scripts are not part of the production vocal assistant pipeline. They are specifically designed for data collection, research, and thesis development.*
 
 **Files and Tracked Metrics:**
