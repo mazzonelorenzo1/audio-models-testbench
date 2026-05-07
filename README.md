@@ -11,6 +11,7 @@
 - [Supported Models Library](#supported-models)
 - [Tools & Utility Scripts](#tools-and-utilities)
 - [Hardware Profiling Benchmarks](#hardware-benchmarks)
+- [Results and Performance Discussion](#results-discussion)
 - [Getting Started](#getting-started)
 
 ---
@@ -107,6 +108,23 @@ This directory contains the scripts used for benchmarking and analyzing the perf
 * `Power_Metrics.py`: Aggregates and logs power draw data.
 
 ---
+
+<a id="results-discussion"></a>
+## Results and Performance Discussion
+
+This section presents the benchmarking results of the modular framework. To ensure statistical significance and mitigate transient hardware fluctuations, the evaluation is based on **over 1,000 experimental runs** for each model-hardware configuration.
+
+### Methodology and Datasets
+The evaluation focuses on accuracy, latency, and efficiency across three critical dimensions of the conversational pipeline:
+
+* **Speech-to-Text (STT) & Text-to-Speech (TTS):** Benchmarked using the **LibriSpeech** dataset. Key metrics include *Real-Time Factor (RTF)* for latency and *Word Error Rate (WER)* for transcription integrity.
+* **Small Language Modeling (SLM):** Tested via the **SQuAD (Stanford Question Answering Dataset)**. Performance was quantified through *Generation Throughput (Tokens/s)* and *Semantic Accuracy*.
+* **System Telemetry:** Power consumption (Joules) and resource utilization (CPU/GPU/RAM) were recorded to identify efficiency patterns.
+
+### Hardware Environment & Optimization
+All tests were performed on an **Intel® Core™ Ultra SoC** architecture. To maximize edge performance and energy efficiency, the framework leverages the **OpenVINO™ toolkit** for hardware-specific optimizations. This allows for dynamic orchestration and offloading of workloads across the **CPU, iGPU, and NPU**, enabling the framework to support up to 3,388 unique execution pipelines.
+
+The following tables summarize the mean results and variance for each category.
 
 <a id="getting-started"></a>
 ## 🚀 Getting Started
