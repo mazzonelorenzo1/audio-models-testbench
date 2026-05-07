@@ -126,6 +126,52 @@ All tests were performed on an **Intel® Core™ Ultra SoC** architecture. To ma
 
 The following tables summarize the mean results and variance for each category.
 
+### 🎙️ Speech-to-Text (STT) Benchmark
+*Dataset: LibriSpeech*
+
+| Model (Params/M) | Device | RTF Mean | RTF Var | WER Mean | WER Var |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| Moonshine Tiny (27) | CPU | 0.036 | 0.0000 | 0.069 | 0.0117 |
+| Whisper Tiny (39) | GPU | 0.060 | 0.0002 | 0.090 | 0.0175 |
+| Whisper Tiny (39) | CPU | 0.087 | 0.0007 | 0.090 | 0.0175 |
+| Moonshine Base (61) | CPU | 0.064 | 0.0002 | 0.051 | 0.0089 |
+| Distil Whisper Small (166) | GPU | 0.071 | 0.0002 | 0.053 | 0.0084 |
+| Distil Whisper Small (166) | CPU | 0.290 | 0.0169 | 0.053 | 0.0084 |
+| Whisper Base (74) | GPU | 0.075 | 0.0003 | 0.070 | 0.0109 |
+| Whisper Base (74) | CPU | 0.143 | 0.0026 | 0.070 | 0.0109 |
+| Distil Whisper Large V3 (756) | GPU | 0.098 | 0.0009 | 0.037 | 0.0057 |
+| Distil Whisper Large V3 (756) | CPU | 1.240 | 0.4759 | 0.037 | 0.0057 |
+| Whisper Small (244) | GPU | 0.100 | 0.0005 | 0.048 | 0.0077 |
+| Whisper Small (244) | CPU | 0.405 | 0.0301 | 0.048 | 0.0077 |
+| Whisper Large V3 Turbo (756) | GPU | 0.110 | 0.0010 | 0.042 | 0.0087 |
+| Whisper Large V3 Turbo (756) | CPU | 1.386 | 0.5606 | 0.042 | 0.0087 |
+| Qwen3-ASR (600) | GPU | 0.127 | 0.0022 | 0.037 | 0.0058 |
+| Qwen3-ASR (600) | CPU | 0.200 | 0.0019 | 0.037 | 0.0058 |
+| Fun-ASR-Nano (800) | GPU | 0.162 | 0.0014 | 0.026 | 0.0042 |
+| Fun-ASR-Nano (800) | CPU | 0.144 | 0.0012 | 0.026 | 0.0042 |
+| Whisper Medium (769) | GPU | 0.167 | 0.0015 | 0.044 | 0.0097 |
+| Whisper Medium (769) | CPU | 1.281 | 0.3571 | 0.044 | 0.0097 |
+
+<br>
+
+### 🗣️ Text-to-Speech (TTS) Benchmark
+*Dataset: LibriSpeech*
+
+| Model (Params/M) | Device | RTF Mean | RTF Var |
+| :--- | :---: | :---: | :---: |
+| Piper TTS (20) | CPU | 0.034 | 0.0001 |
+| Kitten TTS Nano (15) | CPU | 0.169 | 0.0000 |
+| Pocket TTS (100) | CPU | 0.215 | 0.0001 |
+| Kokoro TTS (82) | GPU | 1.330 | 0.3766 |
+| Kokoro TTS (82) | CPU | 0.255 | 0.0054 |
+| Supertonic 2 (66) | CPU | 0.285 | 0.0148 |
+| Kitten TTS Mini (80) | CPU | 0.362 | 0.0004 |
+| Soprano 1.1 (80) | CPU | 0.415 | 0.0073 |
+| Qwen3 TTS (600) | GPU | 1.933 | 0.2755 |
+| Qwen3 TTS (600) | CPU | 2.222 | 0.4743 |
+| VoxCPM (500) | CPU | 5.670 | 0.2236 |
+| OuteTTS 0.1 (350) | CPU | 37.852 | 4.673 |
+
 <a id="getting-started"></a>
 ## 🚀 Getting Started
 
