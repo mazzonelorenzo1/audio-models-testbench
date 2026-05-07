@@ -172,6 +172,21 @@ The following tables summarize the mean results and variance for each category.
 | VoxCPM (500) | CPU | 5.670 | 0.2236 |
 | OuteTTS 0.1 (350) | CPU | 37.852 | 4.673 |
 
+### 📊 Key Insights and Architectural Analysis
+
+The benchmark results reveal crucial insights into how different architectures and hardware targets interact in an Edge computing environment:
+
+#### 🎙️ Speech-to-Text (STT) Insights
+* **The Padding Bottleneck:** While parameter count affects latency, architecture is more decisive. Modern models (like Moonshine) outperform the Whisper baseline by dropping fixed 30-second padding. By using variable-length attention, they dynamically scale computation to the exact audio length.
+* **The Power of Distillation:** Distil-Whisper proves that aggressively pruning the autoregressive decoder while keeping the acoustic encoder maintains excellent accuracy (WER) while drastically cutting latency.
+* **CPU vs. GPU Memory Limits:** Standard Transformer models bottleneck heavily on CPUs due to KV-cache memory bandwidth limits. GPU offloading fixes this. However, models utilizing Grouped Query Attention (GQA), like Qwen3-ASR, drastically reduce memory footprint and run highly effectively on the CPU alone.
+* **The Non-Autoregressive (NAR) Anomaly:** FunASR-Nano actually ran *slower* on the GPU than on the CPU. Because its NAR architecture predicts all tokens in a single parallel pass, the time taken to move data to the GPU (dispatch overhead) exceeds the actual computation time, making the CPU the optimal target.
+
+#### 🗣️ Text-to-Speech (TTS) Insights
+* **The Efficiency Champion:** Piper TTS (RTF 0.034) proves that tiny models (20M) excel when paired with low-level execution. By exporting to ONNX and using native C++ vectorization, it completely bypasses Python overhead, achieving near-zero latency.
+* **Smart Mid-Weight Architectures:** Pocket TTS (100M) outperformed smaller discrete models by operating in a continuous latent space at a low generation frequency. Similarly, Supertonic 2 makes diffusion models viable on the edge strictly through aggressive trajectory distillation (fewer inference steps).
+* **The ALM CPU Bottleneck:** Audio Language Models (ALMs) like OuteTTS or VoxCPM are currently incompatible with CPU-only real-time constraints. Their autoregressive nature requires high-frequency sequential forward passes that immediately saturate CPU memory bandwidth, mandating dedicated hardware acceleration to be usable.
+
 <a id="getting-started"></a>
 ## 🚀 Getting Started
 
