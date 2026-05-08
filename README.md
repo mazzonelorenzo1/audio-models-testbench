@@ -57,30 +57,30 @@ A dedicated benchmarking suite designed to profile the execution speed and syste
 The framework currently supports a vast array of cutting-edge models, carefully integrated to run completely offline. 
 
 ### 🎤 Speech-to-Text (STT) Engines
-* **Whisper Family (OpenVINO):** Tiny OV, Base OV, Small OV, Medium OV, V3 Turbo OV `[CPU, GPU]`
-* **Distil-Whisper (OpenVINO):** Small, Large v3.5 `[CPU, GPU]`
-* **Moonshine:** Tiny (27M), Base (61M) `[CPU]`
-* **Fun-ASR-Nano:** Native `[CPU]` and OpenVINO Optimized `[CPU, GPU]`
-* **Qwen3-ASR 0.6B:** OpenVINO Optimized `[CPU, GPU]`
-* **Kyutai STT:** Native `[CPU]`
+* **Whisper Family (OpenVINO):** [Tiny OV](https://huggingface.co/openai/whisper-tiny), [Base OV](https://huggingface.co/openai/whisper-base), [Small OV](), [Medium OV](https://huggingface.co/openai/whisper-small), [V3 Turbo OV](https://huggingface.co/openai/whisper-large-v3-turbo) `[CPU, GPU]`, [OpenVino wrapper](https://docs.openvino.ai/2024/notebooks/whisper-asr-genai-with-output.html)
+* **Distil-Whisper (OpenVINO):** [Small](https://huggingface.co/distil-whisper/distil-small.en), [Large v3.5](https://huggingface.co/distil-whisper/distil-large-v3.5) `[CPU, GPU]` [OpenVino wrapper](https://docs.openvino.ai/2024/notebooks/distil-whisper-asr-with-output.html)
+* **Moonshine:** [Tiny (27M)](https://huggingface.co/UsefulSensors/moonshine-tiny), [Base (61M)](https://huggingface.co/UsefulSensors/moonshine-base) `[CPU]`
+* **Fun-ASR-Nano:** [Native](https://huggingface.co/FunAudioLLM/Fun-ASR-Nano-2512) `[CPU]` and [OpenVINO Optimized](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/funasr-nano/funasr-nano.ipynb) `[CPU, GPU]`
+* **Qwen3-ASR 0.6B:** [OpenVINO Optimized](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/qwen3-asr/qwen3-asr.ipynb) `[CPU, GPU]`
+* **Kyutai STT:** [Native](https://huggingface.co/docs/transformers/main/model_doc/stt) `[CPU]`
 
 ### 🧠 Large Language Models (LLMs)
-* **Qwen 2.5 1.5B Instruct:** OpenVINO int4 `[CPU, GPU, NPU]`
-* **DeepSeek R1 1.5B Distill:** OpenVINO int4 `[CPU, GPU, NPU]`
-* **Qwen OV:** Standard OpenVINO `[CPU, GPU, NPU]`
-* **SmolLM2 360M:** Native `[CPU]`
-* **Gemma 3 270M:** Native `[CPU]`
+* **Qwen 2.5 1.5B Instruct:** [OpenVINO int4](https://huggingface.co/OpenVINO/Qwen2.5-1.5B-Instruct-fp16-ov) `[CPU, GPU, NPU]`
+* **DeepSeek R1 1.5B Distill:** [OpenVINO int4](https://huggingface.co/OpenVINO/DeepSeek-R1-Distill-Qwen-1.5B-int4-ov) `[CPU, GPU, NPU]`
+* **Qwen OV:** [Standard OpenVINO](https://huggingface.co/OpenVINO/Qwen3-0.6B-fp16-ov) `[CPU, GPU, NPU]`
+* **SmolLM2 360M:** [Native](https://huggingface.co/HuggingFaceTB/SmolLM2-360M) `[CPU]`
+* **Gemma 3 270M:** [Native](https://huggingface.co/google/gemma-3-270m) `[CPU]`
 
 ### 🔊 Text-to-Speech (TTS) Engines
-* **Kokoro:** OpenVINO (`af_heart`) `[CPU, GPU, NPU]` and Native `[CPU]`
-* **Piper:** ONNX Runtime `[CPU]`
-* **KittenTTS:** Nano and Mini 0.8 (ONNX) `[CPU]`
-* **Soprano 1.1 80M:** Native `[CPU]`
-* **Pocket-TTS (Kyutai):** Native `[CPU]`
-* **Supertonic-2:** ONNX Runtime `[CPU]`
-* **OuteTTS 0.1:** 350M LLaMa-based `[CPU]`
-* **Qwen3-TTS 0.6B:** OpenVINO Optimized `[CPU, GPU]`
-* **VoxCPM 0.5B:** Diffusion-based `[CPU]`
+* **Kokoro:** [OpenVINO (`af_heart`)](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/kokoro/kokoro.ipynb) `[CPU, GPU, NPU]` and [Native](https://huggingface.co/hexgrad/Kokoro-82M) `[CPU]`
+* **Piper:** [ONNX Runtime](https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/medium) `[CPU]`
+* **KittenTTS:** [Nano 0.2](https://huggingface.co/KittenML/kitten-tts-nano-0.2) and [Mini 0.8 (ONNX)](https://huggingface.co/KittenML/kitten-tts-mini-0.8) `[CPU]`
+* **Soprano 1.1 80M:** [Native](https://huggingface.co/ekwek/Soprano-1.1-80M) `[CPU]`
+* **Pocket-TTS (Kyutai):** [Native](https://huggingface.co/kyutai/pocket-tts) `[CPU]`
+* **Supertonic-2:** [ONNX Runtime](https://huggingface.co/Supertone/supertonic-2) `[CPU]`
+* **OuteTTS 0.1:** [350M LLaMa-based](https://huggingface.co/OuteAI/OuteTTS-0.1-350M) `[CPU]`
+* **Qwen3-TTS 0.6B:** [OpenVINO Optimized](https://github.com/openvinotoolkit/openvino_notebooks/blob/latest/notebooks/qwen3-tts/qwen3-tts.ipynb) `[CPU, GPU]`
+* **VoxCPM 0.5B:** [Diffusion-based](https://huggingface.co/openbmb/VoxCPM-0.5B) `[CPU]`
 
 ---
 
