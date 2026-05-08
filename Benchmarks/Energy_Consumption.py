@@ -47,8 +47,8 @@ def plot_power_consumption(csv_file):
     plt.legend()
     plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%H:%M:%S'))
     plt.gcf().autofmt_xdate()
-    plt.savefig('C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Consumption_Analytics/WhisperTinyGPU.png', dpi=300)
+    plt.savefig('C:/YourPath/Consumption_Analytics/ModelName.png', dpi=300)
     plt.show()
 
 
-plot_power_consumption("C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/CSV_Paper/whisper_tiny_gpu.CSV")
+plot_power_consumption("C:/YourPath/Consumption_Analytics/ModelName.png")
