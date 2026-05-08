@@ -61,26 +61,25 @@ from transformers import MoonshineForConditionalGeneration, AutoProcessor
 # PATHS AND PARAMETERS CONFIGURATION
 # ==========================================
 REFERENCE_TEXT = ("The rapid evolution of artificial intelligence is fundamentally transforming modern computing architectures. By shifting operations from centralized cloud servers to specialized edge devices, developers can significantly reduce inference latency and protect user privacy. Deploying highly optimized neural networks on local hardware requires efficient unified memory allocation and strict power management. Nevertheless, overcoming the limitations of thermal throttling and memory bandwidth remains a critical challenge for the next generation of embedded systems. What do you think about that")
-PATH_WHISPER_SMALL = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Models/whisper-small-ov-gpu"
-PATH_QWEN3_TTS_OV = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Models/qwen3-tts-0.6b-ov"
-PATH_QWEN3_ASR_OV = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Models/Qwen3-ASR-0.6B-OV"
-PATH_WHISPER_TINY = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Models/whisper-tiny-ov"
-PATH_WHISPER_SMALL_DISTILL = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Models/whisper-small-distill"
-PATH_WHISPER_BASE = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Models/whisper-base-ov-gpu"
-PATH_WHISPER_MEDIUM = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Models/whisper-medium-ov"
-PATH_WHISPER_V3_TURBO = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Models/whisper-v3-turbo-ov"
-PATH_QWEN = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Models/qwen-0.6b-ov-gpu"
-PATH_INPUT = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/QwenKittenWhisperInput/EdgAIFoundationsTest.m4a"
-FUN_ASR_PATH_OV = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Models/Fun-ASR-Nano-2512-ov"
-#REFERENCE_TEXT = ("Hi model how are you is everything fine")
+PATH_WHISPER_SMALL = "C:/YourPath/Models/whisper-small-ov-gpu"
+PATH_QWEN3_TTS_OV = "C:/YourPath/Models/qwen3-tts-0.6b-ov"
+PATH_QWEN3_ASR_OV = "C:/YourPath/Models/Qwen3-ASR-0.6B-OV"
+PATH_WHISPER_TINY = "C:/YourPath/Models/whisper-tiny-ov"
+PATH_WHISPER_SMALL_DISTILL = "C:/YourPath/Models/whisper-small-distill"
+PATH_WHISPER_BASE = "C:/YourPath/Models/whisper-base-ov-gpu"
+PATH_WHISPER_MEDIUM = "C:/YourPath/Models/whisper-medium-ov"
+PATH_WHISPER_V3_TURBO = "C:/YourPath/Models/whisper-v3-turbo-ov"
+PATH_QWEN = "C:/YourPath/Models/qwen-0.6b-ov-gpu"
+PATH_INPUT = "C:/YourPath/Models/EdgAIFoundationsTest.m4a"
+FUN_ASR_PATH_OV = "C:/YourPath/Models/Fun-ASR-Nano-2512-ov"
 
-PATH_TTS = "C:/Users/danil/PycharmProjects/QwenKittenKhadas/en_US-lessac-medium.onnx"
-PATH_KOKORO_OV = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Models/Kokoro-82M-OpenVino"
+PATH_TTS = "C:/YourPath/Models/en_US-lessac-medium.onnx"
+PATH_KOKORO_OV = "C:/YourPath/Models/Kokoro-82M-OpenVino"
 
 # Base folders for dynamic outputs
-BASE_DIR_OUTPUT = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/QwenKittenWhisperOutput"
-BASE_DIR_CSV = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/CSV_Benchmark"
-BASE_DIR_CHARTS = "C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Performance"
+BASE_DIR_OUTPUT = "C:/YourPath/Outputs/Pipeline_Output"
+BASE_DIR_CSV = "C:/YourPath/Outputs/CSV_Benchmark"
+BASE_DIR_CHARTS = "C:/YourPath/Outputs/Performance"
 
 os.makedirs(BASE_DIR_OUTPUT, exist_ok=True)
 os.makedirs(BASE_DIR_CSV, exist_ok=True)
