@@ -10,4 +10,4 @@ This folder contains the core source code for the **Edge AI Conversational Frame
 
 ### 🚀 Getting Started
 Ready to test the framework on your own local hardware? Check out the full installation and execution guide here: 
-👉 **[Insert Link to "How to Run It" Section Here]**
+👉 **[Getting Started](#getting-started)**
