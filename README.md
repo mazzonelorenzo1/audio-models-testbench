@@ -13,6 +13,7 @@
 - [Hardware Profiling Benchmarks](#hardware-benchmarks)
 - [Results and Performance Discussion](#results-discussion)
 - [Getting Started](#getting-started)
+- [Live Demo](#livedemo)
 
 ---
 
@@ -247,6 +248,8 @@ To evaluate the viability of these models for Edge devices, it is essential to c
 * **The iGPU Advantage:** Hardware offloading via OpenVINO is mandatory for heavier models. Running Whisper Large on the iGPU drops energy consumption exponentially (e.g., from 52J to 3J) by drastically cutting inference time.
 * **The Edge Trade-off (CPU vs. RAM):** While C++ optimized models run efficiently on the CPU, they often lock it at 100% utilization, risking OS starvation. Offloading to the iGPU solves this but shifts the bottleneck to the Unified Memory Architecture (UMA), pushing RAM usage up to 70% for a full conversational pipeline.
 
+---
+
 <a id="getting-started"></a>
 ## 🚀 Getting Started
 
@@ -278,3 +281,17 @@ To launch the core evaluation framework:
 python DefMain.py
 ```
 Follow the interactive CLI to select your desired mode, choose the models from the library, target your hardware (CPU/GPU/NPU), and let the framework generate the performance dashboard!
+
+---
+
+<a id="livedemo"></a>
+
+## 🎬 Live Demo: The Optimal Edge Pipeline
+
+Based on the extensive benchmarking and architectural analysis discussed above, we selected the top-performing STT ([Moonshine Tiny)](https://huggingface.co/UsefulSensors/moonshine-tiny)), SLM ([Qwen 2.5 Instruct](https://huggingface.co/OpenVINO/Qwen2.5-1.5B-Instruct-fp16-ov)), and TTS ([Piper](https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/medium)) models to build a fully functional, real-time conversational agent. 
+
+This interactive demo showcases the true potential of the framework in a real-world scenario. It features the **Semantic Bridge Agent** for ultra-low latency, human-like prosody, and leverages **OpenVINO™** for optimal hardware acceleration across the Edge SoC.
+
+You can explore the complete source code and run the interactive demo yourself at the following dedicated repository:
+
+👉 **[Access the Live Demo Repository Here](https://github.com/mazzonelorenzo1/Conversational-Edge-Model)**
