@@ -35,7 +35,7 @@ def fetch_recent_audio_models():
     df = df.sort_values(by="Downloads (30d)", ascending=False)
 
     timestamp = time.strftime("%H%M")
-    output_filename = f"C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/hf_audio_edge_models_{timestamp}.csv"
+    output_filename = f"C:/YourPath/HF_Scraper/hf_audio_edge_models_{timestamp}.csv"
 
     try:
         df.to_csv(output_filename, index=False, sep=';', encoding='utf-8-sig')
