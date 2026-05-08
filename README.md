@@ -269,8 +269,8 @@ pip install -r requirements.txt
 To run the framework completely offline, you need to download the pre-compiled weights and configuration files for the models.
 
 * Download all the required models from this [Google Drive Link](https://drive.google.com/drive/folders/1xDNm1kooOtHcSOL2VqS6_wEpoEkd5Paz?usp=drive_link).
-* A test audio is already present inside the [Google Drive Link](https://drive.google.com/drive/folders/1xDNm1kooOtHcSOL2VqS6_wEpoEkd5Paz?usp=drive_link). To start testing all the models, simply put it in the `Models` folder. If you want to change it, also remember to change the reference text in order to get accurate WER results. 
 * Extract the folders and place them in the correct root or `Models` directory as expected by the paths inside `DefMain.py`.
+* A test audio is already present inside the [Google Drive Link](https://drive.google.com/drive/folders/1xDNm1kooOtHcSOL2VqS6_wEpoEkd5Paz?usp=drive_link). To start testing all the models, simply put it in the `Models` folder. If you want to change it, also remember to change the reference text in order to get accurate WER results.
 
 ### 4. Running the Testbench
 To launch the core evaluation framework:
