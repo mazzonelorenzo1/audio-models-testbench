@@ -253,7 +253,18 @@ To evaluate the viability of these models for Edge devices, it is essential to c
 <a id="getting-started"></a>
 ## 🚀 Getting Started
 
-### 1. Environment Setup
+### Prerequisites
+Ensure you have **Python 3.10 or 3.11** installed on your system, along with `git`.
+
+### 1. Clone the Repository
+First, clone this repository to your local machine and navigate into the project directory:
+
+```bash
+git clone [https://github.com/YourUsername/YourRepoName.git](https://github.com/YourUsername/YourRepoName.git)
+cd YourRepoName
+```
+
+### 2. Environment Setup
 Due to the vast amount of supported inference engines, it is highly recommended to use a dedicated virtual environment.
 
 ```bash
@@ -262,18 +273,30 @@ venv\Scripts\activate   # On Windows
 source venv/bin/activate # On macOS/Linux
 ```
 
-### 2. Install Dependencies
+### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 *(Note: Some specific engines like `llama_cpp` or `openvino` might require C++ build tools or specific hardware drivers depending on your OS).*
 
-### 3. Download Local AI Models
+### 4. Download Local AI Models
 To run the framework completely offline, you need to download the pre-compiled weights and configuration files for the models.
 
 * Download all the required models from this [Google Drive Link](https://drive.google.com/drive/folders/1xDNm1kooOtHcSOL2VqS6_wEpoEkd5Paz?usp=drive_link).
 * Extract the folders and place them in the correct root or `Models` directory as expected by the paths inside `DefMain.py`.
 * A test audio is already present inside the [Google Drive Link](https://drive.google.com/drive/folders/1xDNm1kooOtHcSOL2VqS6_wEpoEkd5Paz?usp=drive_link). To start testing all the models, simply put it in the `Models` folder. If you want to change it, also remember to change the reference text in order to get accurate WER results.
+
+Your folder structure should look like this:
+
+```Plaintext
+YourRepoName/
+├── DefMain.py
+├── requirements.txt
+├── Models/
+│   ├── [Model_Folder]
+│   └── test_audio.wav  <-- Place the test audio here
+└── ...
+```
 
 ### 4. Running the Testbench
 To launch the core evaluation framework:
