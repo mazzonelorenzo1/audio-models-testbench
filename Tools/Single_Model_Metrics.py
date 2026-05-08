@@ -88,6 +88,6 @@ def inspect_single_model(model_id):
 
 if __name__ == "__main__":
     # Insert the exact model name here (e.g. "openai/whisper-tiny" or "LiquidAI/LFM2-700M")
-    MODEL_ID = ("FunAudioLLM/CosyVoice2-0.5B")
+    MODEL_ID = ("ModelRepo/ModelName")
 
     inspect_single_model(MODEL_ID)
