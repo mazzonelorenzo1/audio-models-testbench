@@ -162,8 +162,8 @@ def process_all_files(input_dir, output_dir):
 
 
 # --- FOLDER PATHS ---
-INPUT_FOLDER = r"C:\Users\danil\Desktop\Lorenzo\QwenKittenWhisper\CSV_Baseline"
-OUTPUT_FOLDER = r"C:\Users\danil\Desktop\Lorenzo\QwenKittenWhisper\Consumption_Analytics_baseline"
+INPUT_FOLDER = r"C:\YourPath\CSV_Baseline"
+OUTPUT_FOLDER = r"C:\YourPath\Consumption_Analytics_baseline"
 
 # Execution
 process_all_files(INPUT_FOLDER, OUTPUT_FOLDER)
