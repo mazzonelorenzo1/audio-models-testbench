@@ -61,20 +61,20 @@ from transformers import MoonshineForConditionalGeneration, AutoProcessor
 # PATHS AND PARAMETERS CONFIGURATION
 # ==========================================
 REFERENCE_TEXT = ("The rapid evolution of artificial intelligence is fundamentally transforming modern computing architectures. By shifting operations from centralized cloud servers to specialized edge devices, developers can significantly reduce inference latency and protect user privacy. Deploying highly optimized neural networks on local hardware requires efficient unified memory allocation and strict power management. Nevertheless, overcoming the limitations of thermal throttling and memory bandwidth remains a critical challenge for the next generation of embedded systems. What do you think about that")
-PATH_WHISPER_SMALL = "C:/YourPath/Models/whisper-small-ov-gpu"
-PATH_QWEN3_TTS_OV = "C:/YourPath/Models/qwen3-tts-0.6b-ov"
-PATH_QWEN3_ASR_OV = "C:/YourPath/Models/Qwen3-ASR-0.6B-OV"
-PATH_WHISPER_TINY = "C:/YourPath/Models/whisper-tiny-ov"
-PATH_WHISPER_SMALL_DISTILL = "C:/YourPath/Models/whisper-small-distill"
-PATH_WHISPER_BASE = "C:/YourPath/Models/whisper-base-ov-gpu"
-PATH_WHISPER_MEDIUM = "C:/YourPath/Models/whisper-medium-ov"
-PATH_WHISPER_V3_TURBO = "C:/YourPath/Models/whisper-v3-turbo-ov"
-PATH_QWEN = "C:/YourPath/Models/qwen-0.6b-ov-gpu"
+PATH_WHISPER_SMALL = "C:/YourPath/Models/Model_Folder/whisper-small-ov-gpu"
+PATH_QWEN3_TTS_OV = "C:/YourPath/Models/Model_Folder/qwen3-tts-0.6b-ov"
+PATH_QWEN3_ASR_OV = "C:/YourPath/Models/Model_Folder/Qwen3-ASR-0.6B-OV"
+PATH_WHISPER_TINY = "C:/YourPath/Models/Model_Folder/whisper-tiny-ov"
+PATH_WHISPER_SMALL_DISTILL = "C:/YourPath/Models/Model_Folder/whisper-small-distill"
+PATH_WHISPER_BASE = "C:/YourPath/Models/Model_Folder/whisper-base-ov-gpu"
+PATH_WHISPER_MEDIUM = "C:/YourPath/Models/Model_Folder/whisper-medium-ov"
+PATH_WHISPER_V3_TURBO = "C:/YourPath/Models/Model_Folder/whisper-v3-turbo-ov"
+PATH_QWEN = "C:/YourPath/Models/Model_Folder/qwen-0.6b-ov-gpu"
 PATH_INPUT = "C:/YourPath/Models/EdgAIFoundationsTest.m4a"
-FUN_ASR_PATH_OV = "C:/YourPath/Models/Fun-ASR-Nano-2512-ov"
+FUN_ASR_PATH_OV = "C:/YourPath/Models/Model_Folder/Fun-ASR-Nano-2512-ov"
 
-PATH_TTS = "C:/YourPath/Models/en_US-lessac-medium.onnx"
-PATH_KOKORO_OV = "C:/YourPath/Models/Kokoro-82M-OpenVino"
+PATH_TTS = "C:/YourPath/Models/Model_Folder/en_US-lessac-medium.onnx"
+PATH_KOKORO_OV = "C:/YourPath/Models/Model_Folder/Kokoro-82M-OpenVino"
 
 # Base folders for dynamic outputs
 BASE_DIR_OUTPUT = "C:/YourPath/Outputs/Pipeline_Output"
