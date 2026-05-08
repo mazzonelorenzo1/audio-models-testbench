@@ -20,7 +20,8 @@
 ## 📖 Abstract
 This repository provides a highly modular, end-to-end benchmarking framework designed to evaluate and compare locally hosted AI models for Conversational Voice Assistants. 
 
-It allows developers to plug-and-play different **Speech-to-Text (STT)**, **Large Language Models (LLM)**, and **Text-to-Speech (TTS)** engines, rigorously profiling their performance on Edge hardware (e.g., Mini PCs, SBCs) without relying on cloud APIs.
+It allows developers to plug-and-play different **Speech-to-Text (STT)**, **Large Language Models (LLM)**, and **Text-to-Speech (TTS)** engines, rigorously profiling their performance on Edge hardware (e.g., Mini PCs, SBCs) without relying on cloud APIs, enabling the user to try and test up to 3,388 unique execution pipelines.
+
 
 ---
 
@@ -122,8 +123,7 @@ The evaluation focuses on accuracy, latency, and efficiency across three critica
 * **System Telemetry:** Power consumption (Joules) and resource utilization (CPU/GPU/RAM) were recorded to identify efficiency patterns.
 
 ### Hardware Environment & Optimization
-All tests were performed on an **Intel® Core™ Ultra SoC** architecture. To maximize edge performance and energy efficiency, the framework leverages the **OpenVINO™ toolkit** for hardware-specific optimizations. This allows for dynamic orchestration and offloading of workloads across the **CPU, iGPU, and NPU**, enabling the framework to support up to 3,388 unique execution pipelines.
-
+All tests were performed on an **Intel® Core™ Ultra SoC** architecture. To maximize edge performance and energy efficiency, the framework leverages the **OpenVINO™ toolkit** for hardware-specific optimizations. This allows for dynamic orchestration and offloading of workloads across the **CPU, iGPU, and NPU**.
 The following tables summarize the mean results and variance for each category.
 
 ### 🎙️ Speech-to-Text (STT) Benchmark
