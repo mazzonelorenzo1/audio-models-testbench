@@ -4,7 +4,7 @@ import matplotlib.dates as mdates
 from datetime import datetime
 
 
-def plot_hwinfo_data(csv_file_path, output_image_path="C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/Consumption_Analytics/WhisperTinyGPU.png"):
+def plot_hwinfo_data(csv_file_path, output_image_path="C:/YourPath/Consumption_Analytics/ModelName.png"):
     print(f"📊 Reading and cleaning HWiNFO log from: {csv_file_path}...")
 
     # 1. Manual reading to bypass HWiNFO formatting issues
@@ -95,4 +95,4 @@ def plot_hwinfo_data(csv_file_path, output_image_path="C:/Users/danil/Desktop/Lo
 
 # Execute the function on your file
 if __name__ == "__main__":
-    plot_hwinfo_data("C:/Users/danil/Desktop/Lorenzo/QwenKittenWhisper/CSV_Paper/whisper_tiny_gpu.CSV")
+    plot_hwinfo_data("C:/YourPath/CSV_Paper/ModelName.CSV")
