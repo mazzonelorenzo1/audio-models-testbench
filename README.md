@@ -62,17 +62,17 @@ An interactive, real-time mode. It captures microphone input, transcribes it, ge
 
 ### [2] STT WER Evaluation
 * **Dataset:** LibriSpeech Streaming Dataset.
-* **Methodology:** The framework downloads standardized audio samples, passes them through the selected STT engine, and compares the transcription against the ground truth using the `jiwer` library to calculate the **Word Error Rate (WER)**.
+* **Methodology:** The framework downloads standardized audio samples, passes them through the selected STT engine, and compares the transcription against the ground truth using the [`jiwer`](https://pypi.org/project/jiwer/) library to calculate the **Word Error Rate (WER)**.
 
 ### [3] Liquid ONNX Engine Benchmark
 A dedicated benchmarking suite designed to profile the execution speed and system impact of continuous/liquid state-space models optimized in ONNX format.
 
 ### [4] TTS RTF Evaluation
-* **Dataset:** LibriSpeech Streaming Dataset (Text subset).
+* **Dataset:** [LibriSpeech Streaming Dataset](https://huggingface.co/datasets/openslr/librispeech_asr) (Text subset).
 * **Methodology:** Feeds standardized textual sentences to the selected TTS engine. It calculates the **Real-Time Factor (RTF)** by dividing the time taken to generate the audio by the actual duration of the generated audio (RTF < 1.0 means the model generates audio faster than real-time playback).
 
 ### [5] LLM Tk/s & Semantic Similarity Evaluation
-* **Dataset:** SQuAD (Stanford Question Answering Dataset).
+* **Dataset:** [SQuAD (Stanford Question Answering Dataset)](https://huggingface.co/datasets/rajpurkar/squad).
 * **Methodology:** Feeds context paragraphs and questions to the LLM. It measures generation speed in **Tokens per Second (Tk/s)** and uses NLP metrics to evaluate the semantic similarity between the LLM's generated answer and the expected ground truth.
 
 ---
