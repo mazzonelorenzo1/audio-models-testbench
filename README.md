@@ -61,7 +61,7 @@ Whenever an OpenVINO or hardware-agnostic model is selected, **the framework dyn
 An interactive, real-time mode. It captures microphone input, transcribes it, generates an LLM response, and synthesizes the audio output, measuring the total Time-To-First-Audio (TTFA) and pipeline latency.
 
 ### [2] STT WER Evaluation
-* **Dataset:** LibriSpeech Streaming Dataset.
+* **Dataset:** [LibriSpeech Streaming Dataset](https://huggingface.co/datasets/openslr/librispeech_asr).
 * **Methodology:** The framework downloads standardized audio samples, passes them through the selected STT engine, and compares the transcription against the ground truth using the [`jiwer`](https://pypi.org/project/jiwer/) library to calculate the **Word Error Rate (WER)**.
 
 ### [3] Liquid ONNX Engine Benchmark
