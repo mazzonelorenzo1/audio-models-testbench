@@ -143,8 +143,8 @@ This section presents the benchmarking results of the modular framework. To ensu
 ### Methodology and Datasets
 The evaluation focuses on accuracy, latency, and efficiency across three critical dimensions of the conversational pipeline:
 
-* **Speech-to-Text (STT) & Text-to-Speech (TTS):** Benchmarked using the **LibriSpeech** dataset. Key metrics include *Real-Time Factor (RTF)* for latency and *Word Error Rate (WER)* for transcription integrity.
-* **Small Language Modeling (SLM):** Tested via the **SQuAD (Stanford Question Answering Dataset)**. Performance was quantified through *Generation Throughput (Tokens/s)* and *Semantic Accuracy*.
+* **Speech-to-Text (STT) & Text-to-Speech (TTS):** Benchmarked using the [LibriSpeech](https://huggingface.co/datasets/openslr/librispeech_asr) dataset. Key metrics include *Real-Time Factor (RTF)* for latency and *Word Error Rate (WER)* for transcription integrity.
+* **Small Language Modeling (SLM):** Tested via the [SQuAD (Stanford Question Answering Dataset)](https://huggingface.co/datasets/rajpurkar/squad). Performance was quantified through *Generation Throughput (Tokens/s)* and *Semantic Accuracy*.
 * **System Telemetry:** Power consumption (Joules) and resource utilization (CPU/GPU/RAM) were recorded to identify efficiency patterns.
 
 ### Hardware Environment & Optimization
@@ -292,7 +292,7 @@ cd YourRepoName
 Due to the vast amount of supported inference engines, it is highly recommended to use a dedicated virtual environment.
 
 ```bash
-python -m venv venv
+python -m venv Benchmark
 venv\Scripts\activate   # On Windows
 source venv/bin/activate # On macOS/Linux
 ```
