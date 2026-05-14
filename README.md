@@ -292,7 +292,7 @@ cd YourRepoName
 Due to the vast amount of supported inference engines, it is highly recommended to use a dedicated virtual environment.
 
 ```bash
-python -m venv Benchmark
+python -m venv Testbench
 venv\Scripts\activate   # On Windows
 source venv/bin/activate # On macOS/Linux
 ```
