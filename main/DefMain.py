@@ -851,7 +851,7 @@ class LLMModuleGemma:
     """Gemma 3 text generation module for hardware accelerated environments."""
     def __init__(self, model_id="google/gemma-3-270m-it", device="gpu"):
         self.device = device
-        hf_token = "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"
+        hf_token = "YOUR_API_KEY"
         print(f"🧠 Initializing LLM (Gemma 3 270M) on {self.device.upper()}...")
         self.tokenizer = AutoTokenizer.from_pretrained(model_id, token=hf_token)
         self.model = AutoModelForCausalLM.from_pretrained(
