@@ -197,6 +197,46 @@ The following tables summarize the mean results and variance for each category.
 | VoxCPM (500) | CPU | 5.670 | 0.2236 |
 | OuteTTS 0.1 (350) | CPU | 37.852 | 4.673 |
 
+#### Subjective Perceptual Evaluation (MOS)
+*Based on a Mean Opinion Score (MOS) study conducted with 85 participants.*
+
+| Model | MOS (1–5) Mean | MOS (1–5) Variance |
+| :--- | :---: | :---: |
+| Kokoro TTS (80) | 4.024 | 1.285 |
+| OuteTTS 0.1 (350) | 3.988 | 1.440 |
+| Supertonic 2 (66) | 3.753 | 1.117 |
+| Soprano 1.1 (80) | 3.435 | 1.320 |
+| Qwen3 TTS (600) | 3.412 | 1.436 |
+| Pocket TTS (100) | 3.400 | 1.243 |
+| VoxCPM (500) | 3.118 | 1.176 |
+| Piper TTS (20) | 2.847 | 1.488 |
+| Kitten TTS Nano (15) | 2.188 | 1.131 |
+| Kitten TTS Mini (80) | 2.012 | 0.726 |
+
+### 🎮 High-Tier Edge Configuration
+
+For edge-server environments unconstrained by battery limits, scaling to a dedicated **NVIDIA RTX 5060 Ti** unlocked massive reasoning capabilities:
+
+* **STT (GPU):** *Faster Whisper Large-V3 Turbo* achieved an RTF of 0.093 at an energy cost of 13.60 J/s (system power: 146.29 W).
+* **LLM (GPU):** The 24-billion parameter *Liquid LFM2-24B* delivered a high throughput of 39.20 tk/s, requiring 4.70 Joules per token (system power: 184.05 W).
+* **TTS (GPU):** *Kokoro TTS* achieved an RTF of 0.024 at 2.15 J/s (system power: 89.61 W).
+
+#### Performance and Tool Calling Metrics for Liquid LFM2-24B (Native Syntax)
+
+**Performance Metrics**
+| Metric | Mean |
+| :--- | :---: |
+| Throughput (Tk/s) | 39.20 |
+| Cosine Similarity | 0.926 |
+
+**Tool Calling Accuracy**
+| Metric | Success Rate (%) |
+| :--- | :---: |
+| Format Success Rate (FSR) | 90.0 |
+| Tool Selection Accuracy (TSA) | 85.0 |
+| Argument Accuracy (AA) | 82.5 |
+| Passed Rejection Rate (RR) | 85.0 |
+
 ### 📊 Key Insights and Architectural Analysis
 
 The benchmark results reveal crucial insights into how different architectures and hardware targets interact in an Edge computing environment:
