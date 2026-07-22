@@ -213,32 +213,6 @@ The following tables summarize the mean results and variance for each category.
 | Kitten TTS Nano (15) | 2.188 | 1.131 |
 | Kitten TTS Mini (80) | 2.012 | 0.726 |
 
-<br>
-
-### 🎮 High-Tier Edge Configuration
-
-For edge-server environments unconstrained by battery limits, scaling to a dedicated **NVIDIA RTX 5060 Ti** unlocked massive reasoning capabilities:
-
-* **STT (GPU):** *Faster Whisper Large-V3 Turbo* achieved an RTF of 0.093 at an energy cost of 13.60 J/s (system power: 146.29 W).
-* **LLM (GPU):** The 24-billion parameter *Liquid LFM2-24B* delivered a high throughput of 39.20 tk/s, requiring 4.70 Joules per token (system power: 184.05 W).
-* **TTS (GPU):** *Kokoro TTS* achieved an RTF of 0.024 at 2.15 J/s (system power: 89.61 W).
-
-#### Performance and Tool Calling Metrics for Liquid LFM2-24B (Native Syntax)
-
-**Performance Metrics**
-| Metric | Mean |
-| :--- | :---: |
-| Throughput (Tk/s) | 39.20 |
-| Cosine Similarity | 0.926 |
-
-**Tool Calling Accuracy**
-| Metric | Success Rate (%) |
-| :--- | :---: |
-| Format Success Rate (FSR) | 90.0 |
-| Tool Selection Accuracy (TSA) | 85.0 |
-| Argument Accuracy (AA) | 82.5 |
-| Passed Rejection Rate (RR) | 85.0 |
-
 ### 📊 Key Insights and Architectural Analysis
 
 The benchmark results reveal crucial insights into how different architectures and hardware targets interact in an Edge computing environment:
@@ -313,6 +287,32 @@ To evaluate the viability of these models for Edge devices, it is essential to c
 * **Speed Equals Efficiency:** Ultra-lightweight models (e.g., Moonshine, Piper) minimize energy use (~1 Joule/s) primarily because their low RTF allows the SoC to instantly return to its ~4W idle state.
 * **The iGPU Advantage:** Hardware offloading via OpenVINO is mandatory for heavier models. Running Whisper Large on the iGPU drops energy consumption exponentially (e.g., from 52J to 3J) by drastically cutting inference time.
 * **The Edge Trade-off (CPU vs. RAM):** While C++ optimized models run efficiently on the CPU, they often lock it at 100% utilization, risking OS starvation. Offloading to the iGPU solves this but shifts the bottleneck to the Unified Memory Architecture (UMA), pushing RAM usage up to 70% for a full conversational pipeline.
+
+<br>
+
+### 🎮 High-Tier Edge Configuration
+
+For edge-server environments unconstrained by battery limits, scaling to a dedicated **NVIDIA RTX 5060 Ti** unlocked great reasoning capabilities:
+
+* **STT (GPU):** *Faster Whisper Large-V3 Turbo* achieved an RTF of 0.093 at an energy cost of 13.60 J/s (system power: 146.29 W).
+* **LLM (GPU):** The 24-billion parameter *Liquid LFM2-24B* delivered a high throughput of 39.20 tk/s, requiring 4.70 Joules per token (system power: 184.05 W).
+* **TTS (GPU):** *Kokoro TTS* achieved an RTF of 0.024 at 2.15 J/s (system power: 89.61 W).
+
+#### Performance and Tool Calling Metrics for Liquid LFM2-24B (Native Syntax)
+
+**Performance Metrics**
+| Metric | Mean |
+| :--- | :---: |
+| Throughput (Tk/s) | 39.20 |
+| Cosine Similarity | 0.926 |
+
+**Tool Calling Accuracy**
+| Metric | Success Rate (%) |
+| :--- | :---: |
+| Format Success Rate (FSR) | 90.0 |
+| Tool Selection Accuracy (TSA) | 85.0 |
+| Argument Accuracy (AA) | 82.5 |
+| Passed Rejection Rate (RR) | 85.0 |
 
 ---
 
