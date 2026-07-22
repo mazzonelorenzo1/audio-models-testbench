@@ -213,6 +213,8 @@ The following tables summarize the mean results and variance for each category.
 | Kitten TTS Nano (15) | 2.188 | 1.131 |
 | Kitten TTS Mini (80) | 2.012 | 0.726 |
 
+<br>
+
 ### 🎮 High-Tier Edge Configuration
 
 For edge-server environments unconstrained by battery limits, scaling to a dedicated **NVIDIA RTX 5060 Ti** unlocked massive reasoning capabilities:
