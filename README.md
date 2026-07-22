@@ -292,7 +292,8 @@ To evaluate the viability of these models for Edge devices, it is essential to c
 
 ### 🎮 High-Tier Edge Configuration
 
-For edge-server environments unconstrained by battery limits, scaling to a dedicated **NVIDIA RTX 5060 Ti** unlocked great reasoning capabilities:
+On top of that, some models were also tested on an high-tier edge hardware; the **Nvidia 5060 Ti with 16 GB of VRAM**.
+For edge-server environments unconstrained by battery limits, scaling to a dedicated GPU unlocked great reasoning capabilities:
 
 * **STT (GPU):** *Faster Whisper Large-V3 Turbo* achieved an RTF of 0.093 at an energy cost of 13.60 J/s (system power: 146.29 W).
 * **LLM (GPU):** The 24-billion parameter *Liquid LFM2-24B* delivered a high throughput of 39.20 tk/s, requiring 4.70 Joules per token (system power: 184.05 W).
@@ -385,3 +386,8 @@ This interactive demo showcases the true potential of the framework in a real-wo
 You can explore the complete source code and run the interactive demo yourself at the following dedicated repository:
 
 👉 **[Access the Live Demo Repository Here](https://github.com/mazzonelorenzo1/Conversational-Edge-Model)**
+
+Another repository was also made for an High-tier demo pipeline running on the Nvidia 5060 Ti. You can find all the code try the Conversational Agent yourself at the following dedicated repository:
+
+👉 **[Access the High-Tier Live Demo Repository Here](https://github.com/mazzonelorenzo1/Conversational-Edge-Model-Nvidia)**
+
