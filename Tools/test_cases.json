@@ -1,0 +1,425 @@
+[
+  {
+    "id": "weather_standard",
+    "prompt": "What's the weather like in Rome?",
+    "expected_tool": "get_weather",
+    "expected_args": {"city": "Rome"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "weather_default_milan",
+    "prompt": "Tell me the weather forecast for today, please.",
+    "expected_tool": "get_weather",
+    "expected_args": {"city": "Milan"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "weather_change_mind",
+    "prompt": "Weather in Naples. Actually no, check Florence.",
+    "expected_tool": "get_weather",
+    "expected_args": {"city": "Florence"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "time_standard",
+    "prompt": "What time is it right now?",
+    "expected_tool": "get_current_time",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "time_conversational",
+    "prompt": "I've lost track of time, can you tell me the exact time?",
+    "expected_tool": "get_current_time",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "clipboard_standard",
+    "prompt": "Micro, read me what I copied to the clipboard.",
+    "expected_tool": "read_clipboard",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "clipboard_action",
+    "prompt": "Can you translate the text I just saved in memory?",
+    "expected_tool": "read_clipboard",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "system_standard",
+    "prompt": "How much RAM am I using?",
+    "expected_tool": "get_system_status",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "system_diagnostic",
+    "prompt": "The computer seems very slow to me, can you check the CPU and memory status?",
+    "expected_tool": "get_system_status",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "search_news",
+    "prompt": "What is the latest news about OpenAI today?",
+    "expected_tool": "search_web",
+    "expected_args": {"query": "latest news OpenAI today"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "search_local",
+    "prompt": "Search what time Dune is playing at the cinema today.",
+    "expected_tool": "search_web",
+    "expected_args": {"query": "Dune movie times today"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "search_finance",
+    "prompt": "How much is NVIDIA stock worth right now?",
+    "expected_tool": "search_web",
+    "expected_args": {"query": "NVIDIA stock price"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "reject_general_knowledge_history",
+    "prompt": "Who was the first president of the United States?",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "reject_general_knowledge_science",
+    "prompt": "Explain to me in simple terms what photosynthesis is.",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "reject_chitchat_greeting",
+    "prompt": "Hi Micro, how are you today?",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "reject_chitchat_thanks",
+    "prompt": "Thank you so much, you've been very helpful!",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "reject_out_of_domain_alarm",
+    "prompt": "Micro, set an alarm for me tomorrow morning at 7.",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "reject_out_of_domain_smart_home",
+    "prompt": "Turn off the living room light.",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "followup_open_browser",
+    "prompt": "Yes please, open the search results for Tesla in the browser.",
+    "expected_tool": "open_browser",
+    "expected_args": {"query": "Tesla"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "followup_open_meteo",
+    "prompt": "Yes, open the weather app for me.",
+    "expected_tool": "open_meteo_app",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "edge_cross_domain_change_mind",
+    "prompt": "Search online for who won the Oscars. Actually wait, just tell me the CPU stats.",
+    "expected_tool": "get_system_status",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "edge_distraction_before_intent",
+    "prompt": "Today is a really beautiful day for working, by the way, read me my clipboard.",
+    "expected_tool": "read_clipboard",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "reject_joke",
+    "prompt": "Can you tell me a joke to make me laugh?",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "weather_foreign_language",
+    "prompt": "What is the weather like in Tokyo right now?",
+    "expected_tool": "get_weather",
+    "expected_args": {"city": "Tokyo"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "system_slang",
+    "prompt": "The PC is lagging a lot, check the RAM.",
+    "expected_tool": "get_system_status",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "search_highly_specific_contemporary",
+    "prompt": "Check online if there's a train strike in Milan tomorrow.",
+    "expected_tool": "search_web",
+    "expected_args": {"query": "train strike Milan tomorrow"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "followup_refusal",
+    "prompt": "No, you don't need to open the browser, thanks.",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "edge_missing_query_search",
+    "prompt": "Micro, do an internet search for me please.",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "reject_math_calculation",
+    "prompt": "What is 245 divided by 7?",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "time_hidden_intent",
+    "prompt": "I have to leave soon, is it long until 6:00 PM?",
+    "expected_tool": "get_current_time",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+
+  {
+    "id": "weather_implicit",
+    "prompt": "Do I need an umbrella if I go out in Paris tonight?",
+    "expected_tool": "get_weather",
+    "expected_args": {"city": "Paris"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "weather_default_context",
+    "prompt": "Check the temperature outside.",
+    "expected_tool": "get_weather",
+    "expected_args": {"city": "Milan"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "system_implicit",
+    "prompt": "Is my CPU overheating right now?",
+    "expected_tool": "get_system_status",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "clipboard_summarize",
+    "prompt": "Can you summarize the text I just copied?",
+    "expected_tool": "read_clipboard",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "search_live_traffic",
+    "prompt": "Are there any traffic jams on the A4 highway right now?",
+    "expected_tool": "search_web",
+    "expected_args": {"query": "traffic A4 highway right now"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "search_sports_live",
+    "prompt": "What is the current score of the Champions League match?",
+    "expected_tool": "search_web",
+    "expected_args": {"query": "current score Champions League match today"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "edge_change_mind_complex",
+    "prompt": "Check the weather in Rome. Actually, wait, don't do that, just tell me what time it is.",
+    "expected_tool": "get_current_time",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "edge_tool_confusion",
+    "prompt": "Search on the web for the current weather in Tokyo.",
+    "expected_tool": "get_weather",
+    "expected_args": {"city": "Tokyo"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "reject_general_knowledge_recipe",
+    "prompt": "Tell me a good recipe for a traditional Italian carbonara.",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "reject_general_knowledge_astronomy",
+    "prompt": "What is the exact distance between the Earth and the Moon?",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "reject_out_of_domain_media",
+    "prompt": "Play some relaxing jazz music on Spotify.",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "reject_out_of_domain_hardware",
+    "prompt": "Turn up the volume of the computer.",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "reject_coding_task",
+    "prompt": "Write a Python script to scrape a website.",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "time_implicit",
+    "prompt": "Are we already in the afternoon?",
+    "expected_tool": "get_current_time",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "followup_open_browser_implicit",
+    "prompt": "Sure, open them up for me.",
+    "expected_tool": "open_browser",
+    "expected_args": {"query": "latest search"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "reject_followup_negative",
+    "prompt": "No thanks, just read the summary out loud.",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "system_memory_specific",
+    "prompt": "Do I have enough RAM left to open a heavy game?",
+    "expected_tool": "get_system_status",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "clipboard_action_rewrite",
+    "prompt": "Rewrite the paragraph in my clipboard in a more professional tone.",
+    "expected_tool": "read_clipboard",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "search_tech_release",
+    "prompt": "When is the new iPhone coming out this year?",
+    "expected_tool": "search_web",
+    "expected_args": {"query": "new iPhone release date this year"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "search_local_business",
+    "prompt": "Is the pharmacy near the central station open right now?",
+    "expected_tool": "search_web",
+    "expected_args": {"query": "pharmacy near central station opening hours"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "weather_clothing_advice",
+    "prompt": "Should I wear a heavy coat today in London?",
+    "expected_tool": "get_weather",
+    "expected_args": {"city": "London"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "edge_multiple_tools_implied",
+    "prompt": "Tell me the time and also check the weather in Madrid.",
+    "expected_tool": "get_weather",
+    "expected_args": {"city": "Madrid"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "reject_chitchat_existential",
+    "prompt": "Do you think Artificial Intelligence will take over the world?",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "reject_creative_writing",
+    "prompt": "Write a short poem about a brave little toaster.",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "followup_open_meteo_implicit",
+    "prompt": "Yeah, launch the app.",
+    "expected_tool": "open_meteo_app",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "system_general_performance",
+    "prompt": "Is my computer struggling to run this AI model?",
+    "expected_tool": "get_system_status",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "clipboard_translate",
+    "prompt": "Translate the copied text into Italian.",
+    "expected_tool": "read_clipboard",
+    "expected_args": {},
+    "is_rejection_test": false
+  },
+  {
+    "id": "search_flight_status",
+    "prompt": "Has flight BA287 landed yet?",
+    "expected_tool": "search_web",
+    "expected_args": {"query": "flight BA287 status"},
+    "is_rejection_test": false
+  },
+  {
+    "id": "reject_personal_opinion",
+    "prompt": "What is your favorite color?",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  },
+  {
+    "id": "time_date_confusion",
+    "prompt": "What day of the week is it today?",
+    "expected_tool": null,
+    "expected_args": null,
+    "is_rejection_test": true
+  }
+  
+]
+
