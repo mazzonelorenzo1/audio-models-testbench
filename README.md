@@ -198,7 +198,7 @@ The following tables summarize the mean results and variance for each category.
 | OuteTTS 0.1 (350) | CPU | 37.852 | 4.673 |
 
 #### Subjective Perceptual Evaluation (MOS)
-*Based on a Mean Opinion Score (MOS) study conducted with 85 participants.*
+*Based on a Mean Opinion Score (MOS) study conducted with 85 participants. Full results can be read [here](https://github.com/mazzonelorenzo1/audio-models-testbench/blob/main/Mean_Opinion_Score.csv)*
 
 | Model | MOS (1–5) Mean | MOS (1–5) Variance |
 | :--- | :---: | :---: |
