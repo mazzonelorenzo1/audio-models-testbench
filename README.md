@@ -387,7 +387,7 @@ You can explore the complete source code and run the interactive demo yourself a
 
 👉 **[Access the Live Demo Repository Here](https://github.com/mazzonelorenzo1/Conversational-Edge-Model)**
 
-Another repository was also made for an High-tier demo pipeline running on the Nvidia 5060 Ti. You can find all the code try the Conversational Agent yourself at the following dedicated repository:
+Another repository was also made for an High-tier demo pipeline running on the Nvidia 5060 Ti. You can find all the code to try the Conversational Agent yourself at the following dedicated repository:
 
 👉 **[Access the High-Tier Live Demo Repository Here](https://github.com/mazzonelorenzo1/Conversational-Edge-Model-Nvidia)**
 
