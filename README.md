@@ -14,7 +14,7 @@
 - [Hardware Profiling Benchmarks](#hardware-benchmarks)
 - [Results and Performance Discussion](#results-discussion)
 - [Getting Started](#getting-started)
-- [Live Demo](#livedemo)
+- [Live Demo and Publication](#livedemo)
 
 ---
 
