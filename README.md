@@ -377,7 +377,7 @@ Follow the interactive CLI to select your desired mode, choose the models from t
 
 <a id="livedemo"></a>
 
-## 🎬 Live Demo: The Optimal Edge Pipeline
+## 🎬 Live Demo and Publications
 
 Based on the extensive benchmarking and architectural analysis discussed above, we selected the top-performing STT ([Moonshine Tiny](https://huggingface.co/UsefulSensors/moonshine-tiny)), SLM ([Qwen 2.5 Instruct](https://huggingface.co/OpenVINO/Qwen2.5-1.5B-Instruct-fp16-ov)), and TTS ([Piper](https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/medium)) models to build a fully functional, real-time conversational agent. 
 
@@ -391,3 +391,5 @@ Another repository was also made for an High-tier demo pipeline running on the N
 
 👉 **[Access the High-Tier Live Demo Repository Here](https://github.com/mazzonelorenzo1/Conversational-Edge-Model-Nvidia)**
 
+This work has also been published by MDPI on Applied Sciences, you can click the link below to open the article and take a look at the full research:
+Mazzone, L.; Pau, D. Performance Analysis of a Modular Framework for Edge-Based Generative Conversational AI. Appl. Sci. 2026, 16, 8157. [https://doi.org/10.3390/app16168157](https://doi.org/10.3390/app16168157)
