@@ -377,7 +377,7 @@ Follow the interactive CLI to select your desired mode, choose the models from t
 
 <a id="livedemo"></a>
 
-## 🎬 Live Demo and Publications
+## 🎬 Live Demo and Publication
 
 Based on the extensive benchmarking and architectural analysis discussed above, we selected the top-performing STT ([Moonshine Tiny](https://huggingface.co/UsefulSensors/moonshine-tiny)), SLM ([Qwen 2.5 Instruct](https://huggingface.co/OpenVINO/Qwen2.5-1.5B-Instruct-fp16-ov)), and TTS ([Piper](https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_US/lessac/medium)) models to build a fully functional, real-time conversational agent. 
 
